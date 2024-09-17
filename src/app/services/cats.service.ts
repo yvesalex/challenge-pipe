@@ -6,12 +6,11 @@ import { Observable } from "rxjs";
     providedIn:'root'
 })
 export class CatsService {
+    private url = `https://catfact.ninja/fact`;
     constructor(private http: HttpClient) {
-        
     }
 
     getRandomCat(): Observable<any> {
-        let url = `https://catfact.ninja/fact`;
-        return this.http.get(url);
+        return this.http.get(this.url);
     }
 }
