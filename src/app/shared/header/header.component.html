@@ -2,10 +2,9 @@
     <div class="container-fluid">
       <a class="navbar-brand">{{title}}</a>
       <form class="d-flex">
-        <button type="button" class="btn btn-sm btn-primary">electronics</button>
-        <button type="button" class="btn btn-sm btn-secondary">jewelry</button>
-        <button type="button" class="btn btn-sm btn-success">men's clothing</button>
-        <button type="button" class="btn btn-sm btn-danger">women's clothing</button>
+        @for(category of categories; track category; let index = $index){
+          <button type="button" [class]="colorClasses[index]">{{category}}</button>
+        }
       </form>
     </div>
   </nav>

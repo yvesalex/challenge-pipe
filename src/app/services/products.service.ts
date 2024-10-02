@@ -1,19 +1,22 @@
 import { HttpClient } from "@angular/common/http";
-import { Injectable } from "@angular/core";
+import { inject, Injectable } from "@angular/core";
 import { BASE_URL } from "../config/constants";
-import { map, Observable } from "rxjs";
+import { Observable } from "rxjs";
 import { Product } from "../models/product";
 
 @Injectable({
     providedIn: 'root'
 })
 export class ProductService {
-    constructor(private http:HttpClient) {
-        
+    http: HttpClient = inject(HttpClient);
+
+    getAllProducts(): Observable<Product[]> {
+        let url = `${BASE_URL}/products`;
+        return this.http.get<Product[]>(url);
     }
 
-    getAllProducts(): Observable<any> {
-        let url = `${BASE_URL}/products`;
-        return this.http.get(url);
+    getAllCategories(): Observable<string[]> {
+        let url = `${BASE_URL}/products/categories`;
+        return this.http.get<string[]>(url);
     }
 }

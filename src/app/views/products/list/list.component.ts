@@ -17,9 +17,11 @@ import { HeaderComponent } from '../../../shared/header/header.component';
 })
 export class ListComponent {
   public products$: Observable<Product[]> = new Observable();
+  public categories$: Observable<string[]> = new Observable();
   constructor(private productService: ProductService){}
 
   ngOnInit() {
     this.products$ = this.productService.getAllProducts();
+    this.categories$ = this.productService.getAllCategories();
   }
 }

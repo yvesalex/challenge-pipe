@@ -1,6 +1,8 @@
 
-<app-header></app-header>
-<div class="container text-center">
+@if(categories$ | async; as categories){
+  <app-header [categories]="categories"></app-header>
+}
+<div class="container">
   <div class="row">
       <div *ngFor="let product of products$ | async" class="content-list col">
           <app-product [product]="product"></app-product>
