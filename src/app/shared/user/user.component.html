@@ -1,0 +1,15 @@
+@if(user){
+<div class="container-fluid">
+    <span>{{user.name.firstname + ' ' + user.name.lastname + ' | ' + user.email}}</span>
+    <button [class]="{
+        'float-end':true,
+        'btn':true,
+        'btn-outline-danger': showDetail,
+        'btn-outline-dark': !showDetail
+        }" 
+        (click)="toggleDetail()"
+        type="button">
+        {{btnText}}
+    </button>
+</div>
+}
