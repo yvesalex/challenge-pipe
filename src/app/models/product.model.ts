@@ -1,4 +1,6 @@
-export interface Product {
+export interface ProductModel {
+products: any;
+quantity: any;
     id: number,
     title: string,
     price: number,

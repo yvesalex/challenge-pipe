@@ -1,0 +1,49 @@
+<div class="modal modal-xl fade" id="formModal" tabindex="-1" aria-labelledby="formModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-8">
+                            <form>
+                                <h1 class="modal-title fs-5 text-center" id="formModalLabel">{{article() ? 'Edit mode' :
+                                    'Create mode'}}</h1>
+                                <div class="mb-3">
+                                    <label for="imageUrl" class="form-label">Image Url</label>
+                                    <input type="text" class="form-control" id="imageUrl" name="imageUrl"
+                                        (ngModelChange)="setImageUrl($event)" [ngModel]="article()?.imageUrl" placeholder="Your image">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="articleTitle" class="form-label">Article name</label>
+                                    <input type="text" class="form-control" id="articleTitle" name="articleTitle"
+                                        (ngModelChange)="setTitle($event)" [ngModel]="article()?.title" placeholder="Your title">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="articleContent" class="form-label">Article content</label>
+                                    <textarea type="text" rows="5" class="form-control" id="articleContent"
+                                        name="articleContent" (ngModelChange)="setContent($event)" [ngModel]="article()?.content"
+                                        placeholder="Your content"></textarea>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col md-offset-2">
+                            <form>
+                                <h1 class="modal-title fs-5 text-center" id="formModalLabel">Preview</h1>
+                                <app-detail [article]="article()" [preview]="true"></app-detail>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="save()">Save
+                    changes</button>
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>

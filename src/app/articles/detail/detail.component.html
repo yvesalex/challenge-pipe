@@ -1,0 +1,25 @@
+<div class="card">
+    <div class="card-header text-center">
+        <h2>{{article?.title}}</h2>
+    </div>
+    <div class="card-body">
+        <img [src]="article?.imageUrl" [ngClass]="{
+            'card-img-top mb-2':isVisible(),
+            'visually-hidden': !isVisible()
+            }" alt="article-img">
+        <p class="card-text">{{article?.content}}</p>
+    </div>
+    <div class="card-footer text-center">
+        @if(!preview){
+            <div class="d-flex justify-content-evenly">
+                <button class="btn btn-primary" (click)="toggleImage()" type="button">
+                    {{isVisible() ? 'Hide' : 'Show'}}
+                </button>
+                <button class="btn btn-secondary" (click)="edit($event)" type="button" data-bs-toggle="modal"
+            data-bs-target="#formModal">
+                    Edit
+                </button>
+            </div>
+        }
+    </div>
+</div>
