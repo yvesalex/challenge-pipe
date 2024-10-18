@@ -26,20 +26,14 @@
 </div>
 
 <!-- Modal -->
-<div class="modal fade" id="helpModal" tabindex="-1" aria-labelledby="helpModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
+<div class="modal fade" id="helpModal" tabindex="-1" data-bs-backdrop="false" aria-labelledby="helpModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-fullscreen" data-bs-dismiss="modal" aria-label="Close">
         <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5" id="helpModalLabel">Instructions</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
+            <div class="modal-body text-center">
+                <h1 class="fs-4 text-center">Help Instructions</h1>
                 Modify the width of the rectangle by dragging. <br>
                 Change the rectangle's color using the color picker. <br>
                 Save the rectangle's color by double-clicking on it. 
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
             </div>
         </div>
     </div>
