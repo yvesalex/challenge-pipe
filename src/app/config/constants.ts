@@ -1,5 +1,5 @@
-export const BASE_URL = 'https://643a957dbd3623f1b9b6accc.mockapi.io/colors';
-export const TITLE = 'Custom Directives - Blue Rectangle';
+export const BASE_URL = 'https://636ce2d8ab4814f2b2712854.mockapi.io/product-pipes';
+export const TITLE = 'Custom Pipes';
 export const ERROR_MESSAGE = 'The color value is not red enough!';
 export const DEFAULT_CURSOR = 'default';
 export const DRAGGING_CURSOR = 'grabbing';
