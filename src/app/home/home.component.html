@@ -1,0 +1,46 @@
+<div class="container mx-auto w-75">
+    <div class="card">
+        <div class="card-header text-center">
+            <h1>{{title}}</h1>
+        </div>
+        <div class="card-body">
+            <form>
+                @if(error != ''){
+                    <div class="alert alert-danger" role="alert">
+                        {{ error }}
+                    </div>
+                }
+                <div class="mb-3 w-50">
+                    <label for="colorPicker" class="form-label">Pick your color below</label>
+                    <input type="color" name="colorPicker" id="colorPicker" 
+                    (change)="setColor($event)" value="{{defaultColor}}"
+                    class="btn btn-outline-secondary form-control">
+                </div>
+                <app-rectangle [applyBackgroundColor]="computedColor()" (click)="saveColor($event)"></app-rectangle>
+            </form>
+        </div>
+        <div class="card-footer">
+            <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#helpModal">Help</button>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="helpModal" tabindex="-1" aria-labelledby="helpModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="helpModalLabel">Instructions</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Modify the width of the rectangle by dragging. <br>
+                Change the rectangle's color using the color picker. <br>
+                Save the rectangle's color by double-clicking on it. 
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
