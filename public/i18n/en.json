@@ -1,0 +1,17 @@
+{
+    "title": "Custom Pipes",
+    "name": "Name",
+    "image": "Image",
+    "price": "Price",
+    "publishedSince": "Published Since",
+    "productCode":"Product Code", 
+    "YEAR": {
+        "singular": "year",
+        "plural": "years"
+    },
+    "MONTH": {
+        "singular": "month",
+        "plural": "months"
+    },
+    "AGO": "ago"
+}

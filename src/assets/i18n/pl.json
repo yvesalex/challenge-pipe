@@ -1,0 +1,13 @@
+{
+    "title": "Custom Pipos",
+    "Name":"Nazwa",
+    "YEAR": {
+        "singular": "rok",
+        "plural": "lat"
+    },
+    "MONTH": {
+        "singular": "miesiąc",
+        "plural": "miesiące"
+    },
+    "AGO": "temu"
+}

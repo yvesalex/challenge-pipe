@@ -1,0 +1,17 @@
+{
+    "title": "Rura Niestandardowa",
+    "Name":"Nazwa",
+    "image": "Obrazek",
+    "price": "Cena",
+    "publishedSince": "Opublikowano",
+    "productCode":"Kod Produktu", 
+    "YEAR": {
+        "singular": "rok",
+        "plural": "lat"
+    },
+    "MONTH": {
+        "singular": "miesiąc",
+        "plural": "miesiące"
+    },
+    "AGO": "temu"
+}

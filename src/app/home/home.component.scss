@@ -1,28 +1,3 @@
-.card{
-    height: 600px;
-    margin-top: 20px;
-}
-
-.btn-color-back{
-    width:100%;
-    margin: 2px;
-    height: 20px;
-}
-
-.modal {
-   position:fixed;
-   top:85%;
-   right:0;
-   left:0;
-   bottom:0;
-   
-   .modal-content{
-       background-color: #000000;
-        line-height: 2em;
-        color:rgba($color: #dfdfdf, $alpha: 0.8);
-   }
-} 
-
-.modal-backdrop {
-   background-color: transparent;
+img{
+    width:60px;
 }

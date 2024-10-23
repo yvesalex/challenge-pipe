@@ -1,0 +1,13 @@
+{
+    "title": "Custom Pipes",
+    "name":"Name",
+    "YEAR": {
+        "singular": "year",
+        "plural": "years"
+    },
+    "MONTH": {
+        "singular": "month",
+        "plural": "months"
+    },
+    "AGO": "ago"
+}

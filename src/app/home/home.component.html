@@ -1,40 +1,29 @@
 <div class="container mx-auto w-75">
-    <div class="card">
-        <div class="card-header text-center">
-            <h1>{{title}}</h1>
-        </div>
-        <div class="card-body">
-            <form>
-                @if(error != ''){
-                    <div class="alert alert-danger" role="alert">
-                        {{ error }}
-                    </div>
+    <h1 class="text-center">{{"title" | translate}}</h1>
+    <div class="table-responsive">
+        <table class="table table-striped table-hover table-bordered">
+            <thead>
+                <tr class="text-center">
+                    <td>{{"Name" | translate}}</td>
+                    <td>{{"image" | translate}}</td>
+                    <td>{{"price" | translate}}</td>
+                    <td>{{"publishedSince" | translate}}</td>
+                    <td>{{"productCode" | translate}}</td>
+                </tr>
+            </thead>
+            <tbody>
+                @for(product of products(); track product.id){
+                <tr>
+                    <td>{{product.name | short}}</td>
+                    <td>
+                        <img class="rounded mx-auto d-block" src="/public/img/product-image.png" alt="product image">
+                    </td>
+                    <td class="text-end">{{product.price | pricefix}}</td>
+                    <td>{{product.publishedAt | publishing}}</td>
+                    <td class="text-center">{{product.id | codeformat : product.name}}</td>
+                </tr>
                 }
-                <div class="mb-3 w-50">
-                    <label for="colorPicker" class="form-label">Pick your color below</label>
-                    <input type="color" name="colorPicker" id="colorPicker" 
-                    (change)="setColor($event)" value="{{defaultColor}}"
-                    class="btn btn-outline-secondary form-control">
-                </div>
-                <app-rectangle [applyBackgroundColor]="computedColor()" (click)="saveColor($event)"></app-rectangle>
-            </form>
-        </div>
-        <div class="card-footer">
-            <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#helpModal">Help</button>
-        </div>
-    </div>
-</div>
-
-<!-- Modal -->
-<div class="modal fade" id="helpModal" tabindex="-1" data-bs-backdrop="false" aria-labelledby="helpModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-fullscreen" data-bs-dismiss="modal" aria-label="Close">
-        <div class="modal-content">
-            <div class="modal-body text-center">
-                <h1 class="fs-4 text-center">Help Instructions</h1>
-                Modify the width of the rectangle by dragging. <br>
-                Change the rectangle's color using the color picker. <br>
-                Save the rectangle's color by double-clicking on it. 
-            </div>
-        </div>
+            </tbody>
+        </table>
     </div>
 </div>

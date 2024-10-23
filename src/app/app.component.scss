@@ -1,0 +1,16 @@
+.flag {
+    width:20px;
+    height: 20px;
+    margin: 4px;
+    border-radius: 50%;
+}
+.flag:hover {
+    cursor: pointer;
+}
+
+#nvLang label {
+    text-decoration: underline;
+    svg {
+        margin-right: 2px;
+    }
+}
