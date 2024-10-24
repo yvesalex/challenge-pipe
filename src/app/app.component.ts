@@ -36,5 +36,8 @@ export class AppComponent {
     if (this.searchText.length >= SEARCH_TEXT_LIMIT) {
       this.searchService.onSearch.update(() => this.searchText);
     }
+    else {
+      this.searchService.onSearch.set('');
+    }
   }
 }

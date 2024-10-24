@@ -12,14 +12,14 @@
                 </tr>
             </thead>
             <tbody>
-                @for(product of products(); track product.id){
+                @for(product of visibleProducts(); track product.id){
                 <tr>
-                    <td>{{product.name | short | search}}</td>
+                    <td>{{product.name | short}}</td>
                     <td>
                         <img class="rounded mx-auto d-block" [src]="imgUrl" alt="product image">
                     </td>
                     <td class="text-end">{{product.price | pricefix}}</td>
-                    <td>{{transformPublishingDate(product.publishedAt) | search }}</td>
+                    <td>{{transformPublishingDate(product.publishedAt)}}</td>
                     <td class="text-center">{{product.id | codeformat : product.name}}</td>
                 </tr>
                 }
