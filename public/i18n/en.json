@@ -5,13 +5,11 @@
     "price": "Price",
     "publishedSince": "Published Since",
     "productCode":"Product Code", 
-    "YEAR": {
-        "singular": "year",
-        "plural": "years"
-    },
-    "MONTH": {
-        "singular": "month",
-        "plural": "months"
-    },
-    "AGO": "ago"
+    "year": "year",
+    "years": "years",
+    "month": "month",
+    "months": "months",
+    "ago": "ago",
+    "today": "today",
+    "and": "and"
 }

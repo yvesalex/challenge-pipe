@@ -5,13 +5,11 @@
     "price": "Cena",
     "publishedSince": "Opublikowano",
     "productCode":"Kod Produktu", 
-    "YEAR": {
-        "singular": "rok",
-        "plural": "lat"
-    },
-    "MONTH": {
-        "singular": "miesiąc",
-        "plural": "miesiące"
-    },
-    "AGO": "temu"
+    "year": "rok",
+    "years": "lat",
+    "month": "miesiąc",
+    "months": "miesiące",
+    "ago": "temu",
+    "today": "dzisiaj",
+    "and": "i"
 }

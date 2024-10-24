@@ -9,7 +9,6 @@ import { IMAGE_URL } from "../config/constants";
 export class ImagePipe implements PipeTransform {
     transform(value: string): string {
         let imageUrl = value == undefined || value.length <= 0 ? IMAGE_URL : value;
-        console.log(imageUrl)
         return imageUrl;
     }
 }

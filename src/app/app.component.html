@@ -19,6 +19,9 @@
                 <img src="/public/img/pl-flag.png" alt="pl" class="flag" (click)="switchLang('pl')">
             </div>
         </div>
+        <form class="d-flex" role="search">
+            <input class="form-control me-2" (keyup)="search($event)" type="search" placeholder="Search" aria-label="Search">
+        </form>
     </nav>
     <router-outlet />
 </div>

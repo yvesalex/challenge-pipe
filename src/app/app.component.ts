@@ -1,10 +1,11 @@
-import { Component, inject, NgModule } from '@angular/core';
+import { Component, EventEmitter, inject, NgModule, Output } from '@angular/core';
 import { RouterModule, RouterOutlet } from '@angular/router';
 import { FooterComponent } from "./shared/footer/footer.component";
-import { TITLE } from './config/constants';
+import { SEARCH_TEXT_LIMIT, TITLE } from './config/constants';
 import { TranslateModule, TranslatePipe, TranslateService } from '@ngx-translate/core';
 import { FormsModule } from '@angular/forms';
 import { UpperCasePipe } from '@angular/common';
+import { SearchService } from './services/search.service';
 
 @Component({
   selector: 'app-root',
@@ -16,7 +17,9 @@ import { UpperCasePipe } from '@angular/common';
 export class AppComponent {
   title = "test";
   lang = "en";
+  searchText = "";
   translate: TranslateService = inject(TranslateService);
+  searchService: SearchService = inject(SearchService);
 
   ngOnInit() {
     this.translate.addLangs(['en', 'pl']);
@@ -26,5 +29,12 @@ export class AppComponent {
   switchLang(lang: 'en' | 'pl') {
     this.lang = lang;
     this.translate.use(this.lang);
+  }
+
+  search(event: any) {
+    this.searchText = event.target.value;
+    if (this.searchText.length >= SEARCH_TEXT_LIMIT) {
+      this.searchService.onSearch.update(() => this.searchText);
+    }
   }
 }
