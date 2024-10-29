@@ -5,6 +5,6 @@ export class TranslatePipe implements PipeTransform {
     translateService: TranslateService = inject(TranslateService);
 
     transform(value: string) {
-        
+        return this.translateService.instant(value);
     }
 }

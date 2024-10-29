@@ -3,7 +3,7 @@ import { provideRouter, withComponentInputBinding } from '@angular/router';
 
 import { routes } from './app.routes';
 import { HttpClient, provideHttpClient } from '@angular/common/http';
-import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateModule, TranslateLoader, TranslatePipe } from '@ngx-translate/core';
 import { createTranslateLoader, provideTranslation } from './services/translate-factory.service';
 import { PublishingPipe } from './pipes/publishing.pipe';
 import { CodeFormatter } from './pipes/code-formatter.pipe';
@@ -17,6 +17,7 @@ export const appConfig: ApplicationConfig = {
     ),
     PublishingPipe,
     CodeFormatter,
-    ShortenerPipe
+    ShortenerPipe,
+    TranslatePipe
   ]
 };

@@ -19,8 +19,8 @@
                         <img class="rounded mx-auto d-block" [src]="imgUrl" alt="product image">
                     </td>
                     <td class="text-end">{{product.price | pricefix}}</td>
-                    <td>{{transformPublishingDate(product.publishedAt)}}</td>
-                    <td class="text-center">{{product.id | codeformat : product.name}}</td>
+                    <td>{{product.publishingDate}}</td>
+                    <td class="text-center">{{product.code}}</td>
                 </tr>
                 }
             </tbody>
