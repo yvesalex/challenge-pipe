@@ -12,15 +12,15 @@
                 </tr>
             </thead>
             <tbody>
-                @for(product of visibleProducts(); track product.id){
+                @for(product of products(); track product.id){
                 <tr>
-                    <td>{{product.name | short}}</td>
+                    <td>{{product.name | short | search : searchService.onSearch()}}</td>
                     <td>
-                        <img class="rounded mx-auto d-block" [src]="imgUrl" alt="product image">
+                        <img class="rounded mx-auto d-block" [src]="product.imageUrl | imagefix" alt="product image">
                     </td>
-                    <td class="text-end">{{product.price | pricefix}}</td>
-                    <td>{{product.publishingDate}}</td>
-                    <td class="text-center">{{product.code}}</td>
+                    <td class="text-end">{{product.price | pricefix | search : searchService.onSearch()}}</td>
+                    <td>{{product.publishedAt | publishing  | search : searchService.onSearch() | translate}}</td>
+                    <td class="text-center">{{product | codeformat | search : searchService.onSearch()}}</td>
                 </tr>
                 }
             </tbody>

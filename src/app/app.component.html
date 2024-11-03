@@ -20,7 +20,7 @@
             </div>
         </div>
         <form class="d-flex" role="search">
-            <input class="form-control me-2" (keyup)="search($event)" type="search" placeholder="Search" aria-label="Search">
+            <input #searchInput class="form-control me-2" (keyup)="search($event)" type="search" placeholder="Search" aria-label="Search">
         </form>
     </nav>
     <router-outlet />

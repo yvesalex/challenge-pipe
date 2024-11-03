@@ -1,4 +1,5 @@
 import { Pipe, PipeTransform } from "@angular/core";
+import { ProductModel } from "../models/product.model";
 
 @Pipe({
     name: 'codeformat',
@@ -6,7 +7,8 @@ import { Pipe, PipeTransform } from "@angular/core";
     pure: true
 })
 export class CodeFormatter implements PipeTransform {
-    transform(value: string, name: string): string {
+    transform(product: ProductModel): string {
+        let value: string = product.id, name: string = product.name;
         let result = value.padStart(3, '00') ;
         let names = name.split(' ');
         let part2 = '';

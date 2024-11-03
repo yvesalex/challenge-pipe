@@ -35,6 +35,6 @@ export class AppComponent {
 
   search(event: any) {
     this.searchText = event.target.value;
-    this.searchService.onSearch.update(() => this.searchText);
+    this.searchService.onSearch.set(this.searchText);
   }
 }

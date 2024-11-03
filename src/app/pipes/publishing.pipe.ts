@@ -11,7 +11,7 @@ const timeAgo = new TimeAgo('en-US');
 @Pipe({
     name: "publishing",
     standalone: true,
-    pure: true
+    pure: false
 })
 export class PublishingPipe implements PipeTransform {
     translate: TranslateService = inject(TranslateService);
